@@ -4,91 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drømmehaven</title>
-    <!--fonts og stylesheet-->
+    <!-- Fonts og stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome ikoner -->
     <script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
+    <!-- JavaScript fil -->
+    <script src="script.js" defer></script>
 </head>
 <body>
   
-    <!--header og navigation-->
-    <header>
-        <nav class="navbar" aria-label="Hovedmenu"> <!-- aria label = kan læses op af skærmlæsere og andre hjælpemidler for blinde eller svagtseende-->
+<header>
+    <div class="navbar">
+        <!-- Logo i venstre side -->
         <div class="logo">
-                <i class="fa-regular fa-moon"></i> <!--måne logo-->
-                <span>Drømmehaven</span> <!--drømmehaven i venstre hjørne-->
-            </div>
+            <i class="fa-regular fa-moon" aria-hidden="true"></i>
+            <span>Drømmehaven</span>
+        </div>
 
-            <!-- Burgermenu -->
-            <input type="checkbox" id="burger-check" hidden> <!--usynlig checkbox, "type checkbox" gør at den kan være tjekket af og ikke tjekket af-->
-            <label for="burger-check" class="burger-menu" aria-label="Åbn menu"> <!--Når en bruger klikker på elementet, ændrer tjekboksen ovenfor status-->
-                <i class="fa-solid fa-bars"></i> <!--ikon til menuen fra fontawesome (3 streger)-->
-            </label>
+        <!-- Højre side: Burgermenu og links -->
+        <div class="nav-container">
+            <button id="bars"
+                aria-expanded="false"
+                aria-controls="menu"
+                aria-label="Åben navigation"
+                class="burger-menu"
+            >
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
 
-            <!-- Menu links -->
-            <ul class="nav-links"> <!--giver listen et navn, så man via CSS kan style menuen-->
-                <li><a href="index.html">Forside</a></li>
-                <li><a href="mental-sundhed.html">Mental sundhed</a></li>
-                <li><a href="kontakt.html">Kontakt & støtte</a></li>
-                <!-- href - angiver stien til den side, man bliver sendt over på, når man klikker-->
-            </ul>
-        </nav>
-    </header>
+            <!-- Menupunkter - id="menu" matcher aria-controls -->
+            <nav id="menu">
+                <ul class="nav-links">
+                    <li><a class="active" href="#">Forside</a></li>
+                    <li><a href="mental-sundhed.html">Mental sundhed</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 
-     <main>
-        <!-- Intro sektion -->
-        <section class="tekst-img">
-            <div class="tekst-indhold">
-                <h1>Et sted hvor du kan drømme dig væk fra hverdagens larm</h1> <!--sidens hovedoverskrift-->
-                <p>Drømmehaven er et digitalt fristed for unge. Her finder du råd, inspiration og redskaber til at håndtere stress, tankemylder og hverdagens pres.</p>
-                <!--p = almindelig tekstafsnit-->
-                <a href="mental-sundhed.html" class="cta-knap">Udforsk gode råd</a>
-                <!--link der leder brugeren videre til undersiden mental sundhed-->
-            </div>
+<main id="hovedindhold">
+    <!-- Intro sektion -->
+    <section class="tekst-img">
+        <div class="tekst-indhold">
+            <h1>Et sted hvor du kan drømme dig væk fra hverdagens larm</h1>
+            <p>Drømmehaven er et digitalt fristed for unge. Her finder du råd, inspiration og redskaber til at håndtere stress, tankemylder og hverdagens pres.</p>
+            <a href="mental-sundhed.html" class="cta-knap">Udforsk gode råd</a>
+        </div>
 
-            <div class="billede"> <!--billede til forside-->
-                <img src="stemning.jpg" alt="Person med en kaffekop der sidder ved et vindue og kigger ud">
-                <!--alt beskriver billedet for skærmlæsere osv.-->
-            </div>
-        </section>
+        <div class="billede">
+            <img src="stemning.jpg" alt="Person med en kaffekop der sidder ved et vindue og kigger ud">
+        </div>
+    </section>
 
-         <!-- Temaer sektion -->
-        <section class="temaer-sektion"> <!--overordnet beholder til hele tema-sektionen på siden-->
-            <h2>Vigtige temaer</h2> <!-- anden hovedoverskrift til hjemmesiden-->
-            
-            <div class="temaer-container"> <!--usynlig boks, der samler alle tema kortene-->
-                <div class="tema-kort">
-                    <div class="tema-top"> <!--beholder til toppen af kortet, så ikon og overskrift placeres pænt sammen-->
-                        <i class="fa-solid fa-clock-rotate-left"></i> <!--ikon til boks-->
-                        <h3>Håndtering af stress</h3> <!--tredje hovedoverskrift-->
-                    </div>
-                    <p>Små, overskuelige vaner i hverdagen kan gøre en stor forskel.</p>
-                    <a href="mental-sundhed.html" class="laes-mere">Læs mere</a>
+    <!-- Temaer sektion -->
+    <section class="temaer-sektion">
+        <h2>Vigtige temaer</h2>
+        
+        <div class="temaer-container">
+            <div class="tema-kort">
+                <div class="tema-top">
+                    <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+                    <h3>Håndtering af stress</h3>
                 </div>
-
-                 <div class="tema-kort">
-                    <div class="tema-top">
-                        <i class="fa-solid fa-laptop"></i>
-                        <h3>Sunde digitale vaner</h3>
-                    </div>
-                    <p>Gode rammer omkring skærmforbruget skaber ro i hovedet.</p>
-                    <a href="mental-sundhed.html" class="laes-mere">Læs mere</a>
-                </div>
-
-                <div class="tema-kort">
-                    <div class="tema-top">
-                        <i class="fa-regular fa-heart"></i>
-                        <h3>Hvor kan du få hjælp?</h3>
-                    </div>
-                    <p>Gratis og anonyme steder, du kan række ud til.</p>
-                    <a href="kontakt.html" class="laes-mere">Læs mere</a>
-       </div>
+                <p>Små, overskuelige vaner i hverdagen kan gøre en stor forskel.</p>
+                <!-- Eksempel på bedre link-tekst eller brug af aria-label for skærmlæsere -->
+                <a href="mental-sundhed.html" class="laes-mere">Læs mere <span class="sr-only">om håndtering af stress</span></a>
             </div>
-        </section>
-    </main>
-    
+
+            <div class="tema-kort">
+                <div class="tema-top">
+                    <i class="fa-solid fa-laptop" aria-hidden="true"></i>
+                    <h3>Sunde digitale vaner</h3>
+                </div>
+                <p>Gode rammer omkring skærmforbruget skaber ro i hovedet.</p>
+                <a href="mental-sundhed.html" class="laes-mere">Læs mere</a>
+            </div>
+
+            <div class="tema-kort">
+                <div class="tema-top">
+                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    <h3>Hvor kan du få hjælp?</h3>
+                </div>
+                <p>Gratis og anonyme steder, du kan række ud til.</p>
+                <a href="kontakt.html" class="laes-mere">Læs mere</a>
+            </div>
+        </div>
+    </section>
+</main>
+
 </body>
 </html>
