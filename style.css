@@ -9,11 +9,11 @@
 /* Navbaren på mobilen */ 
 .navbar { 
     display: flex; 
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; 
     padding: 15px 20px; 
     background-color: #f7f6f2; 
+    position: relative;
 } 
 
 .logo { 
@@ -24,31 +24,41 @@
     font-weight: bold; 
 } 
 
-/* Burgermenu på mobilen */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Burgermenu knap i højre side */
 .burger-menu {
     font-size: 1.5rem;
     cursor: pointer;
-    display: block; /* Vises på mobil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
-    border: none;
     background: transparent;
-  
+    border: none;
 }
 
 /* Skjul menuen på mobil som standard */
 .nav-links { 
     display: none; 
-    flex-direction: column; 
-    align-items: center;
     list-style: none; 
-    gap: 15px; 
-    width: 100%;
-    margin-top: 15px;
 } 
 
-/* Vises på mobil når checkboxen er vinget af */
-#burger-check:checked ~ .nav-links {
+
+nav > ul.show {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f7f6f2;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.05);
 }
 
 .nav-links a { 
@@ -58,10 +68,9 @@
     font-size: 1rem; 
 }
 
-
 /* Styling til tekst og billede (Mobile first) */
 .tekst-img {
-    display: flex; /* tekst over hinanden */
+    display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px;
@@ -73,38 +82,36 @@
 }
 
 .tekst-img img {
-    border-radius: 20px; /* runde hjørner */
-    object-fit:cover
+    border-radius: 20px;
+    object-fit: cover;
 }
-
-
 
 /* Computer (når skærmen er 768px eller større) */
 @media screen and (min-width: 768px){
     .navbar {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 20px 60px;
     }
 
-    /* Skjuler burgermenu på computer */
+    /* Skjuler burgermenu-knap på computer */
     .burger-menu {
         display: none;
     }
 
-    /* Viser altid menuen vandret på computeren */
+    /* Viser altid menuen vandret i højre side på computeren */
     .nav-links {
-        display: flex;
+        display: flex !important;
         flex-direction: row;
+        position: static;
         width: auto;
-        margin-top: 0;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
         gap: 40px;
     }
 
     .nav-links a {
          font-size: 1.1rem;
     }
-
     
     .tekst-img {
         flex-direction: row;
@@ -127,19 +134,15 @@
         display: block;
         margin: 0 auto;
     }
-    
 }
 
-@media screen and (max-width: 425px) {     
+@media screen and (max-width: 425px) {    
     .tekst-img { 
         flex-direction: column;    
     }      
     .tekst-img div, .tekst-img img {
         width: 100%;
     }          
-    .cta {         
-        flex-direction: column;    
-    } 
 }
 
 .cta-knap {
@@ -148,19 +151,18 @@
     color: #000;
     font-weight: 600;
     padding: 12px 24px;
-    border: 1px solid #EBE3DA; /* Giver den en ramme */
-    border-radius: 30px;   /* Gør hjørnerne runde og bløde */
+    border: 1px solid #EBE3DA;
+    border-radius: 30px;
     background-color: #EBE3DA; 
     transition: background-color 0.3s ease;
     margin-top: 15px;
 }
 
-/* Gør CTA knappen mørkere når man holder musen over */
 .cta-knap:hover {
     background-color: #eee;
 }
 
-/* temaer sektion */
+/* Temaer sektion */
 .temaer-sektion {
     padding: 40px 20px;
 }
@@ -171,14 +173,12 @@
     font-weight: 700;
 }
 
-/* Mobil (stiller boksene under hinanden) */
 .temaer-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* De enkelte bokse */
 .tema-kort {
     background-color: #f5f0eb; 
     border-radius: 16px;
@@ -223,19 +223,18 @@
     text-decoration: underline;
 }
 
-/* Computer (når skærmen er 768px eller bredere) */
 @media screen and (min-width: 768px) {
     .temaer-sektion {
         padding: 60px;
     }
 
     .temaer-container {
-        flex-direction: row; /* Stiller boksene ved siden af hinanden i stedet for over */
+        flex-direction: row;
         gap: 30px;
     }
 
     .tema-kort {
-        flex: 1; /* Gør at de deler bredden ligeligt */
+        flex: 1;
     }
 }
 
@@ -271,7 +270,6 @@
     margin-bottom: 15px;
 }
 
-/* Spalter i bunden (Mobil) */
 .spalter-container {
     display: flex;
     flex-direction: column;
@@ -279,14 +277,13 @@
     margin-top: 40px;
 }
 
-/* Computervisning (mental sundhed side) */
 @media screen and (min-width: 768px) {
     .underside-indhold {
         padding: 50px 60px;
     }
 
     .spalter-container {
-        flex-direction: row; /* Stiller "Håndtering af stress" og "Sunde digitale vaner" ved siden af hinanden */
+        flex-direction: row;
         gap: 60px;
     }
 
@@ -359,7 +356,7 @@
     line-height: 1.5;
 }
 
-/* Højre boks (Formular) */
+/* højre boks */
 .kontakt-form-boks {
     background-color: #f5f0eb;
     padding: 30px;
