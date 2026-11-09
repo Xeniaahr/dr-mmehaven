@@ -4,44 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental sundhed</title>
-
-        <!-- Fonts og stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome ikoner -->
     <script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
-
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-     <!-- Header og navigation -->
     <header>
-        <nav class="navbar" aria-label="Hovedmenu"> <!-- aria label = kan læses op af skærmlæsere og andre hjælpemidler for blinde eller svagtseende-->
-       
+        <div class="navbar">
             <div class="logo">
-                <i class="fa-regular fa-moon" aria-hidden="true"></i> <!--måne logo-->
-                <span>Drømmehaven</span> <!--drømmehaven i venstre hjørne-->
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-regular fa-moon" aria-hidden="true"></i>
+                    <span>Drømmehaven</span>
+                </a>
             </div>
 
+            <div class="nav-container">
+                <button id="bars"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="åben navigation"
+                    class="burger-menu"
+                >
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
 
-  <!-- Burgermenu -->
-            <input type="checkbox" id="burger-check" hidden>
-            <label for="burger-check" class="burger-menu" aria-label="Åbn menu">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
-            </label>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Forside</a></li>
-                <li><a href="mental-sundhed.html">Mental sundhed</a></li>
-                <li><a href="kontakt.html">Kontakt & støtte</a></li>
-            </ul>
-        </nav>
+                <nav>
+                    <ul id="menu" class="nav-links">
+                        <li><a href="index.html">Forside</a></li>
+                        <li><a class="active" href="mental-sundhed.html">Mental sundhed</a></li>
+                        <li><a href="kontakt.html">Kontakt & støtte</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-     <main class="underside-indhold">
-        
+    <main class="underside-indhold">
         <section class="tekst-blok">
             <h1>Om mental sundhed</h1>
             <p>Mental sundhed handler om at trives, kunne håndtere hverdagens udfordringer og føle sig forbundet med andre.</p>
@@ -54,22 +56,20 @@
 
         <section class="spalter-container">
             <div class="spalte">
-                <h2>Håndtering af stress</h2>
-                <p><strong>Planlagte mikropauser:</strong> Læg 5 minutters pause ind hver time uden skærm eller input.</p>
-                <p><strong>Gør tankerne synlige:</strong> Skriv dine bekymringer ned på papir - det frigiver kognitiv kapacitet i hjernen.</p>
+                <h3>Håndtering af stress</h3>
+                <p><strong>Planlagte mikropauser:</strong> En 5 minutters pause uden skærm kan sikre en roligere hverdag.</p>
+                <p><strong>Gør tankerne synlige:</strong> Skriv dine bekymringer ned på papir.</p>
                 <p><strong>Sæt grænser:</strong> Lær at sige nej til aftaler, når dit batteri er fladt.</p>
             </div>
 
             <div class="spalte">
-                <h2>Sunde digitale vaner</h2>
-                <p><strong>Skærmfri zoner:</strong> Hold soveværelset frit for mobiltelefoner for at sikre en bedre søvnkvalitet.</p>
+                <h3>Sunde digitale vaner</h3>
+                <p><strong>Skærmfri zoner:</strong> Hold mobilen udenfor soveværelset. Dette er med til at forbedre søvnkvalitet.</p>
                 <p><strong>Slå støj fra:</strong> Deaktiver ikke-vigtige notifikationer, så du selv styrer, hvornår du tjekker din telefon.</p>
-                <p><strong>Bevidst brug:</strong> Stil dig selv spørgsmålet: "Giver det mig overskud eller stress at rulle igennem dette feed lige nu?"</p>
+                <p><strong>Bevidst brug:</strong> Tænk inden du åbner din telefon, og spørg dig selv, om det er nødvendigt lige nu. 
             </div>
         </section>
-
     </main>
 
-    
 </body>
 </html>
