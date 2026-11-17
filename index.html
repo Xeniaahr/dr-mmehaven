@@ -1,100 +1,100 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drømmehaven</title>
-    <!-- Fonts og stylesheet -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome ikoner -->
-    <script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
-    <!-- JavaScript fil -->
-    <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drømmehaven</title>
+<!-- Fonts og stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- FontAwesome ikoner -->
+<script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
+<!-- JavaScript fil -->
+<script src="script.js" defer></script>
 </head>
 <body>
-  
 <header>
-    <div class="navbar">
-        <!-- Logo i venstre side -->
-        <div class="logo">
-            <i class="fa-regular fa-moon" aria-hidden="true"></i>
-            <span>Drømmehaven</span>
-        </div>
+<div class="navbar">
+<!-- Logo i venstre side -->
+<div class="logo">
+<a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+<i class="fa-regular fa-moon" aria-hidden="true"></i>
+<span>Drømmehaven</span>
+</a>
+</div>
 
-        <!-- Højre side: Burgermenu og links -->
-        <div class="nav-container">
-            <button id="bars"
-                aria-expanded="false"
-                aria-controls="menu"
-                aria-label="Åben navigation"
-                class="burger-menu"
-            >
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
-            </button>
+<!-- Højre side: Burgermenu og links -->
+<div class="nav-container">
+<button id="bars"
+aria-expanded="false"
+aria-controls="menu"
+aria-label="Åben navigation"
+class="burger-menu"
+>
+<i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
 
-            <!-- Menupunkter - id="menu" matcher aria-controls -->
-            <nav id="menu">
-                <ul class="nav-links">
-                    <li><a class="active" href="#">Forside</a></li>
-                    <li><a href="mental-sundhed.html">Mental sundhed</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+<!-- Menupunkter -->
+<nav id="menu">
+<ul class="nav-links">
+<li><a class="active" href="#">Forside</a></li>
+<li><a href="mental-sundhed.html">Mental sundhed</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</div>
 </header>
 
 <main id="hovedindhold">
-    <!-- Intro sektion -->
-    <section class="tekst-img">
-        <div class="tekst-indhold">
-            <h1>Et sted hvor du kan drømme dig væk fra hverdagens larm</h1>
-            <p>Drømmehaven er et digitalt fristed for unge. Her finder du råd, inspiration og redskaber til at håndtere stress, tankemylder og hverdagens pres.</p>
-            <a href="mental-sundhed.html" class="cta-knap">Udforsk gode råd</a>
-        </div>
+<!-- Intro sektion -->
+<section class="tekst-img">
+<div class="tekst-indhold">
+<h1>Et sted hvor du kan drømme dig væk fra hverdagens larm</h1>
+<p>Drømmehaven er et digitalt fristed for unge. Her finder du råd, inspiration og redskaber til at håndtere stress, tankemylder og hverdagens pres.</p>
+<a href="mental-sundhed.html" class="cta-knap">Udforsk gode råd</a>
+</div>
 
-        <div class="billede">
-            <img src="stemning.jpg" alt="Person med en kaffekop der sidder ved et vindue og kigger ud">
-        </div>
-    </section>
+<div class="billede">
+<img src="stemning.jpg" alt="Person med en kaffekop der sidder ved et vindue og kigger ud">
+</div>
+</section>
 
-    <!-- Temaer sektion -->
-    <section class="temaer-sektion">
-        <h2>Vigtige temaer</h2>
-        
-        <div class="temaer-container">
-            <div class="tema-kort">
-                <div class="tema-top">
-                    <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
-                    <h3>Håndtering af stress</h3>
-                </div>
-                <p>Små, overskuelige vaner i hverdagen kan gøre en stor forskel.</p>
-                <!-- Eksempel på bedre link-tekst eller brug af aria-label for skærmlæsere -->
-                <a href="mental-sundhed.html" class="laes-mere">Læs mere <span class="sr-only">om håndtering af stress</span></a>
-            </div>
+<!-- Temaer sektion -->
+<section class="temaer-sektion">
+<h2>Vigtige temaer</h2>
+<div class="temaer-container">
+<div class="tema-kort">
+<div class="tema-top">
+<i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+<h3>Håndtering af stress</h3>
+</div>
+<p>Små, overskuelige vaner i hverdagen kan gøre en stor forskel.</p>
+<!-- Eksempel på bedre link-tekst eller brug af aria-label for skærmlæsere -->
+<a href="mental-sundhed.html" class="laes-mere">Læs mere <span class="sr-only">om håndtering af stress</span></a>
+</div>
 
-            <div class="tema-kort">
-                <div class="tema-top">
-                    <i class="fa-solid fa-laptop" aria-hidden="true"></i>
-                    <h3>Sunde digitale vaner</h3>
-                </div>
-                <p>Gode rammer omkring skærmforbruget skaber ro i hovedet.</p>
-                <a href="mental-sundhed.html" class="laes-mere">Læs mere</a>
-            </div>
+<div class="tema-kort">
+<div class="tema-top">
+<i class="fa-solid fa-laptop" aria-hidden="true"></i>
+<h3>Sunde digitale vaner</h3>
+</div>
+<p>Gode rammer omkring skærmforbruget skaber ro i hovedet.</p>
+<a href="mental-sundhed.html" class="laes-mere">Læs mere <span class="sr-only">om sunde digitale vaner</span></a>
+</div>
 
-            <div class="tema-kort">
-                <div class="tema-top">
-                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                    <h3>Hvor kan du få hjælp?</h3>
-                </div>
-                <p>Gratis og anonyme steder, du kan række ud til.</p>
-                <a href="kontakt.html" class="laes-mere">Læs mere</a>
-            </div>
-        </div>
-    </section>
+<div class="tema-kort">
+<div class="tema-top">
+<i class="fa-regular fa-heart" aria-hidden="true"></i>
+<h3>Hvor kan du få hjælp?</h3>
+</div>
+<p>Gratis og anonyme steder, du kan række ud til.</p>
+<a href="kontakt.html" class="laes-mere">Læs mere <span class="sr-only">om hvor du kan få hjælp</span></a>
+</div>
+</div>
+</section>
 </main>
 
 </body>
