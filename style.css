@@ -6,6 +6,19 @@
     font-family: 'Montserrat', sans-serif; 
 } 
 
+/* Skærmlæser-tekst (WCAG tilgængelighed) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Navbaren på mobilen */ 
 .navbar { 
     display: flex; 
@@ -393,12 +406,13 @@ nav > ul.show {
     font-size: 1rem;
 }
 
-
-a:focus, 
-button:focus, 
-input:focus, 
-textarea:focus,
-.burger-menu:focus {
+/* Tastatur (WCAG krav) */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible,
+.burger-menu:focus-visible,
+.logo:focus-visible {
     outline: 3px solid #000 !important;
     outline-offset: 3px !important;
 }
