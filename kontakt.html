@@ -1,86 +1,95 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
-
-     <!-- Fonts og stylesheet -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Fontawesome ikoner -->
-    <script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt & støtte</title>
+<!-- Fonts og stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- Fontawesome ikoner -->
+<script src="https://kit.fontawesome.com/829d5199ff.js" crossorigin="anonymous"></script>
+<!-- JavaScript fil -->
+<script src="script.js" defer></script>
 </head>
 <body>
 
-     <!-- Header og navigation -->
-    <header>
-        <nav class="navbar" aria-label="Hovedmenu"> 
-            <div class="logo">
-                <i class="fa-regular fa-moon" aria-hidden="true"></i>
-                <span>Drømmehaven</span>
-            </div>
+<header>
+<div class="navbar">
+<div class="logo">
+<a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+<i class="fa-regular fa-moon" aria-hidden="true"></i>
+<span>Drømmehaven</span>
+</a>
+</div>
 
-            <!-- Burgermenu -->
-            <input type="checkbox" id="burger-check" hidden>
-            <label for="burger-check" class="burger-menu" aria-label="Åbn menu">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
-            </label>
+<div class="nav-container">
+<button id="bars"
+aria-expanded="false"
+aria-controls="menu"
+aria-label="åben navigation"
+class="burger-menu"
+>
+<i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Forside</a></li>
-                <li><a href="mental-sundhed.html">Mental sundhed</a></li>
-                <li><a href="kontakt.html">Kontakt & støtte</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav id="menu">
+<ul class="nav-links">
+<li><a href="index.html">Forside</a></li>
+<li><a href="mental-sundhed.html">Mental sundhed</a></li>
+<li><a class="active" href="kontakt.html">Kontakt & støtte</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
 
-    <main class="kontakt-indhold">
-        <div class="kontakt-header">
-            <h1>Kontakt & støtte</h1>
-            <p>Du er ikke alene. Her kan du række ud - helt uforpligtende.</p>
-        </div>
+<main class="kontakt-indhold">
+<div class="kontakt-header">
+<h1>Kontakt & støtte</h1>
+<p>Du er ikke alene. Her kan du række ud - helt uforpligtende.</p>
+</div>
 
-        <div class="kontakt-grid">
-            <div class="kontakt-info-boks">
-                <div class="info-item">
-                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                    <div>
-                        <h3>Ring til os</h3>
-                        <p class="telefon-nr">+45 28688782</p>
-                    </div>
-                </div>
-                <p>Har du brug for nogen at tale med her og nu? Vores linjer er åbne, og vi sidder klar til at lytte.</p>
-            </div>
+<div class="kontakt-grid">
+<div class="kontakt-info-boks">
+<div class="info-item">
+<i class="fa-solid fa-phone" aria-hidden="true"></i>
+<div>
+<h3>Ring til os</h3>
+<p class="telefon-nr"><a href="tel:+4528688782" style="color: inherit; text-decoration: none;">+45 28688782</a></p>
+</div>
+</div>
+<p>Har du brug for nogen at tale med her og nu? Vores linjer er åbne, og vi sidder klar til at lytte.</p>
+</div>
 
-            <div class="kontakt-form-boks">
-                <h2>Skriv til os</h2>
-                <div class="form-gruppe">
-                    <label for="navn">Navn</label>
-                    <input type="text" id="navn" name="navn">
-                </div>
+<div class="kontakt-form-boks">
+<h2>Skriv til os</h2>
 
-                <div class="form-gruppe">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email">
-                </div>
+<form id="kontakt-form" action="#" method="POST">
+<div class="form-gruppe">
+<label for="navn">Navn</label>
+<input type="text" id="navn" name="navn" required aria-required="true">
+</div>
 
-                <div class="form-gruppe">
-                    <label for="besked">Besked</label>
-                    <textarea id="besked" name="besked" rows="4"></textarea>
-                </div>
+<div class="form-gruppe">
+<label for="email">E-mail</label>
+<input type="email" id="email" name="email" required aria-required="true">
+</div>
 
-                <button type="button" class="cta-knap">Send besked</button>
-            </div>
-        </div>
-    </main>
+<div class="form-gruppe">
+<label for="besked">Besked</label>
+<textarea id="besked" name="besked" rows="4" required aria-required="true"></textarea>
+</div>
 
-</body>
-</html>
+<button type="submit" class="cta-knap">Send besked</button>
+</form>
 
-    
+</div>
+</div>
+</div>
+</main>
+
 </body>
 </html>
